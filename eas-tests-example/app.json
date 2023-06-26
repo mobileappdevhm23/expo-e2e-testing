@@ -24,8 +24,7 @@
       }
     },
     "plugins": ["@config-plugins/detox"],
-    "package": "techtalk.expo.e2e.test"
-    },
+    "package": "techtalk.expo.e2e.test",
     "web": {
       "favicon": "./assets/favicon.png"
     }
