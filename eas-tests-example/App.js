@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View, Image } from 'react-native';
 
 export default function App() {
   const [clicked, setClicked] = useState(false);
@@ -9,10 +9,19 @@ export default function App() {
     <View style={styles.container}>
       {!clicked && (
         <Pressable testID="click-me-button" style={styles.button} onPress={() => setClicked(true)}>
-          <Text style={styles.text}>Click me</Text>
+          <Text style={styles.text}>Hier klicken!</Text>
         </Pressable>
       )}
-      {clicked && <Text style={styles.hi}>Hi!</Text>}
+      {clicked && (
+          <>
+            <Image testID="check-icon" style={styles.image} source={require('./assets/check.png')} />
+            <Text style={styles.hi}>Das funktioniert!</Text>
+            <Pressable testID="reset-button" style={styles.button2} onPress={() => setClicked(false)}>
+              <Text style={styles.text}>Reset</Text>
+            </Pressable>
+          </>
+        )}
+
       <StatusBar style="auto" />
     </View>
   );
@@ -34,9 +43,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 12,
     paddingHorizontal: 32,
-    borderRadius: 4,
+    borderRadius: 30,
     elevation: 3,
     backgroundColor: '#4630EB',
+  },
+  button2: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 30,
+    elevation: 3,
+    backgroundColor: 'red',
+    position: 'absolute',
+    bottom: 0,
+    marginBottom: 30,
+  },
+  image: {
+    width: 70,
+    height: 70,
   },
   text: {
     fontSize: 16,

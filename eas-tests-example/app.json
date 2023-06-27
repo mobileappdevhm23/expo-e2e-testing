@@ -5,6 +5,9 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "plugins": [
+      "@config-plugins/detox"
+    ],
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -16,24 +19,21 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "techtalk.expo.e2e.test"
+      "bundleIdentifier": "com.jnnkvlr.eastestsexample"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.jnnkvlr.eastestsexample"
     },
-    "plugins": [
-      "@config-plugins/detox"
-    ],
-    "package": "techtalk.expo.e2e.test",
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "bde1ac68-c75a-4fe2-a9de-dc3af08c164d"
+        "projectId": "ba703016-de44-431e-b51e-6ecf70760f9d"
       }
     }
   }
